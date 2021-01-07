@@ -386,14 +386,6 @@ def house_type_nun_pie_fun() -> pyecharts.charts.Pie:
 print('- Figure house_type_num_pie has been completed!')
 
 # --------------------------------------------------------------------------------------------
-heatmap = (
-    pyecharts.charts.HeatMap()
-    .add_xaxis(['面积均价','面积','户型','朝向','交通配套','城市'])
-    .add_yaxis('热力图',x)
-    .render()
-)
-
-# --------------------------------------------------------------------------------------------
 gd_page = (
     pyecharts.charts.Page()
         .add(
