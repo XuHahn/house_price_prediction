@@ -40,10 +40,10 @@ print(f'- LinearRegression mean_absolute_error:{round(mean_absolute_error(y_test
 print(f'- LinearRegression mean_squared_error:{round(mean_squared_error(y_test, y_pre), 2)}')
 print(f'- LinearRegression r2_score:{round(r2_score(y_test, y_pre), 2)}')
 print('-------------------------------------')
-print(f'- LinearRegression score:{round(tree.score(x_test, y_test), 2)}')
-print(f'- LinearRegression mean_absolute_error:{round(mean_absolute_error(y_test, y_pre_tree), 2)}')
-print(f'- LinearRegression mean_squared_error:{round(mean_squared_error(y_test, y_pre_tree), 2)}')
-print(f'- LinearRegression r2_score:{round(r2_score(y_test, y_pre_tree), 2)}')
+print(f'- DecisionTreeRegressor score:{round(tree.score(x_test, y_test), 2)}')
+print(f'- DecisionTreeRegressor mean_absolute_error:{round(mean_absolute_error(y_test, y_pre_tree), 2)}')
+print(f'- DecisionTreeRegressor mean_squared_error:{round(mean_squared_error(y_test, y_pre_tree), 2)}')
+print(f'- DecisionTreeRegressor r2_score:{round(r2_score(y_test, y_pre_tree), 2)}')
 
 corr = list(map(lambda x: list(x), [i for i in list(np.corrcoef(ts, y))]))
 
