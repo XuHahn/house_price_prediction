@@ -1,5 +1,3 @@
-import re
-
 import numpy as np
 
 from house_utils import select_by_name

@@ -20,7 +20,8 @@ DATA_LIST = get_data()
 
 def select_by_column(column_name: str, select_data=None):
     """
-    :param select_data: find data in select_data
+    :param
+        select_data: find data in select_data
     :param column_name: column's name
     :return: column data in (column_name),type = list
     """

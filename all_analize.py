@@ -1,8 +1,6 @@
 import pyecharts
 from pyecharts import globals
 from pyecharts import options as opts
-from convert_to_digital import *
-import house_price.conf
 from house_type import *
 from orientation_data import *
 from region_data import *
@@ -16,7 +14,7 @@ np.set_printoptions(precision=2)
 # --------------------------------------------------------------------------------------------
 def gd_hist():
     value_bar = pyecharts.charts.Bar()
-    value_bar.add_xaxis(house_price.conf.CITY_LIST)
+    value_bar.add_xaxis(conf.CITY_LIST)
     value_bar.add_yaxis('平均价格', [np.mean(zhongshan_price_lst).round(2),
                                  np.mean(zhuhai_price_lst).round(2),
                                  np.mean(dongguan_price_lst).round(2),
@@ -98,7 +96,7 @@ print('- Figure value_bar has been completed!')
 # --------------------------------------------------------------------------------------------
 def box_fun():
     box_plot = pyecharts.charts.Boxplot()
-    box_plot.add_xaxis(house_price.conf.CITY_LIST)
+    box_plot.add_xaxis(conf.CITY_LIST)
     box_plot.add_yaxis('箱型图', box_plot.prepare_data(
         [list(map(lambda x: float(x), list(zhongshan_price_lst))),
          list(map(lambda x: float(x), list(zhuhai_price_lst))),
@@ -424,7 +422,7 @@ house_type = (
         house_type_nun_pie_fun(),
         house_type_bar_fun()
     )
-        .render('html\\house_type.html')
+        .render('html/house_type.html')
 )
 print('- Page house_type has been completed!')
 # --------------------------------------------------------------------------------------------
