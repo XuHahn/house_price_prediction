@@ -8,7 +8,8 @@ import csv
 # 创建csv
 file = open('original_data.csv', 'wt', newline='', encoding='utf-8')
 writer = csv.writer(file)
-writer.writerow(('楼盘名称', '区域', '单价', '本小区均价', '新区片均价', '总价', '面积', '房源编号', '户型', '朝向', '核心卖点', '户型简介', '交通配套', '城市'))  # 写入列标题
+writer.writerow(
+    ('楼盘名称', '区域', '单价', '本小区均价', '新区片均价', '总价', '面积', '房源编号', '户型', '朝向', '核心卖点', '户型简介', '交通配套', '城市'))  # 写入列标题
 
 
 def get_info(links):
@@ -84,6 +85,7 @@ def get_info(links):
         except:
             pass
 
+
 # 深圳29641，广州 23455，zh 4000,
 if __name__ == '__main__':
     cities = ['shenzhen', 'guangzhou', 'zhuhai', 'foshan', 'dongguan', 'huizhou', 'zhaoqing', 'zhongshan', 'jiangmen']
@@ -106,4 +108,3 @@ if __name__ == '__main__':
             time.sleep(10)
             pg = pg + 1
         driver.close()  # 关闭弹窗
-
