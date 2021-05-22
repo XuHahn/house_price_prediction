@@ -25,9 +25,10 @@ line.fit(x, y)
 tree.fit(x, y)
 print('- Fit end')
 #                            ['面积均价', '面积', '户型', '朝向', '交通配套', '城市',]
-# test = np.expand_dims(np.array([80000,    100,    53,     2,      1,       5]),axis=0)
-# line.predict()
-
+test = np.expand_dims(np.array([80000,    100,    53,     2,      1,       5]),axis=0)
+print('LinearRegression predict: ',line.predict(test))
+print('DecisionTreeRegressor predict: ',tree.predict(test))
+print('-------------------------------------')
 y_pre = line.predict(x_test)
 y_pre_tree = tree.predict(x_test)
 ts = np.transpose(x, (1, 0))
