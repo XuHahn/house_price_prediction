@@ -349,14 +349,12 @@ def region_hist_fun():
 
 print('- Figure region_hist has been completed!')
 # --------------------------------------------------------------------------------------------
-word_cloud = (
-    pyecharts.charts.WordCloud()
-        .add('城市词云', [[i, j] for i, j in zip(list(region_name_arr), list(region_ave_price_arr))])
-        .render('all\\word_cloud.html')
-)
+def word_cloud_fun():
+    word_cloud = pyecharts.charts.WordCloud()
+    word_cloud.add('城市词云', [[i, j] for i, j in zip(list(region_name_arr), list(region_ave_price_arr))])
+    word_cloud.render('all\\word_cloud.html')
+    return word_cloud
 print('- Figure word_cloud has been completed!')
-
-
 # --------------------------------------------------------------------------------------------
 def house_type_bar_fun():
     house_type_bar = pyecharts.charts.Bar(init_opts=opts.InitOpts(height='6000px'))
@@ -432,6 +430,7 @@ all_page = (
         gd_num_pie_fun(),
         gd_hist(),
         box_fun(),
+        word_cloud_fun(),
         orientation_num_fun(),
         orientation_bar_fun(),
         region_hist_fun(),
