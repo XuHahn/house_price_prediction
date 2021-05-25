@@ -426,6 +426,24 @@ house_type = (
 )
 print('- Page house_type has been completed!')
 # --------------------------------------------------------------------------------------------
+all_page = (
+    pyecharts.charts.Page()
+        .add(
+        gd_num_pie_fun(),
+        gd_hist(),
+        box_fun(),
+        orientation_num_fun(),
+        orientation_bar_fun(),
+        region_hist_fun(),
+        region_ava_effect_scatter_fun(),
+        region_hot_map_fun(),
+        house_type_nun_pie_fun(),
+        house_type_bar_fun()
+    )
+        .render('html/all_page.html')
+)
+print('- Page all_page has been completed!')
+# --------------------------------------------------------------------------------------------
 print('- draw end')
 # os.system('all\\all_analyze_hist.html')
 # print('1')
