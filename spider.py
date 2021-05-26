@@ -96,7 +96,7 @@ if __name__ == '__main__':
                                  'Intel Mac OS X 10_14_0) AppleWebKit/'
                                  '537.36 (KHTML, like Gecko) Chrome'
                                  '/85.0.4183.102 Safari/537.36'}
-        driver = webdriver.Chrome()
+        driver = webdriver.chrome()
         pg = 1
         for url in urls:
             driver.get(url)

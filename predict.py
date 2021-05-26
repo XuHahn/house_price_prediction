@@ -9,7 +9,9 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import r2_score
 from convert_to_digital import *
 from sklearn.tree import DecisionTreeRegressor
-
+import pydotplus
+import graphviz
+from sklearn import tree as t
 x = np.array(x, np.float32).round(2)
 y = np.array(y, np.int)
 x = preprocessing.StandardScaler().fit(x).transform(x)
@@ -26,6 +28,11 @@ tree.fit(x, y)
 print('- Fit end')
 #                            ['面积均价', '面积', '户型', '朝向', '交通配套', '城市',]
 test = np.expand_dims(np.array([80000,    100,    53,     2,      1,       5]),axis=0)
+
+dot_data = t.export_graphviz(tree, out_file=None)
+graph = pydotplus.graph_from_dot_data(dot_data)
+graph.write_png("tree.png")
+
 print('LinearRegression predict: ',line.predict(test))
 print('DecisionTreeRegressor predict: ',tree.predict(test))
 print('-------------------------------------')
