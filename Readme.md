@@ -53,7 +53,7 @@ pip install -r requirements.txt
    python convert_to_digital.py
    ~~~
 4. ~~~Bash
-   all_analize.py
+   python all_analize.py
    ~~~
 #### 参与贡献
     自己的大作业自己瞎写，给大家参考用
